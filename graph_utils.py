@@ -63,7 +63,7 @@ def get_graph(df, degree):
 
     unique_colors = new_color_pallete(category_list)
 
-    df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: int(str(x))/10)
+    df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: int(str(x))*0.1)
     min = df_blackfriday_CA['value'].min()
     max = df_blackfriday_CA['value'].max()
     df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: (x - min)/(max-min))
