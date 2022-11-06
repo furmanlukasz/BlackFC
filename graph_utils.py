@@ -31,12 +31,11 @@ def get_graph(degree = 5):
     G = nx.MultiDiGraph()
 
     for i,row in tqdm(df_blackfriday_CA.iterrows()):
-        kk = category_list[0]
+
         for k in category_list:
             if row['category'] == k:
                 G.add_node(row['to'], color=unique_colors[category_list.index(k)], size=2, title=row['category'], category=row['category'], hidden=True)
                 G.add_edge(row['to'], row['from'], relation=row['callingFunction'], arrows='to', value=row['value']+0.6, color=unique_colors[category_list.index(k)])
-        # G.add_edge(row['to'], row['from'], relation=row['callingFunction'], arrows='to', value=row['value']+0.6, color=unique_colors[category_list.index(kk)]) #, color=unique_colors[category_list.index(kk)]
 
 
     trh_degree = degree
@@ -53,7 +52,6 @@ def get_graph(degree = 5):
     normalized_degree = transformer.transform(np.array(degree).reshape(-1, 1))
     normalized_degree_list = np.abs(normalized_degree.flatten().tolist())
 
-    # images = ['icons/{}.png'.format(i) for i in category_list]
     images = ['https://i.ibb.co/kqfLj6F/Exchanges.png',
               'https://i.ibb.co/6yj2FDN/Marketplaces.png',
               'https://i.ibb.co/MSYpVC1/Finance.png',
@@ -88,13 +86,3 @@ def get_graph(degree = 5):
             except:
                 pass
     return noG
-
-
-# pyvis_nt = net.Network(height='1100px', width='100%', bgcolor='#222222', font_color='white')
-# pyvis_nt.from_nx(noG)
-# # pyvis_nt.barnes_hut(gravity=-200,overlap=0.5)
-# # pyvis_nt.hrepulsion()
-# pyvis_nt.force_atlas_2based()
-# pyvis_nt.show_buttons(filter_=['physics']) #filter_=['edges']
-# # pyvis_nt.toggle_physics(False)
-# pyvis_nt.save_graph('test2.html')
