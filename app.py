@@ -69,7 +69,7 @@ list_nodes_to_remove = []
 for node,edge in zip(G.nodes(), G.edges()):
     try:
         if G.nodes[node]['category'] not in options:
-            G.nodes[node]['hidden'] = False
+            # G.nodes[node]['hidden'] = False
             list_nodes_to_remove.append(node)
     except:
         pass
