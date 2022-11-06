@@ -3,5 +3,6 @@ networkx
 tqdm
 numpy
 scikit-learn
+seaborn
 streamlit_agraph
 streamlit
