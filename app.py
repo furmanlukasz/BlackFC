@@ -64,16 +64,16 @@ sidebar.write(word_cloud(df_tag))
 
 
 G = nx.read_gpickle("test.gpickle")
-# list_nodes_to_remove = []
+list_nodes_to_remove = []
 for node,edge in zip(G.nodes(), G.edges()):
     try:
         if G.nodes[node]['category'] not in options:
             G.nodes[node]['hidden'] = False
-            # list_nodes_to_remove.append(node)
+            list_nodes_to_remove.append(node)
     except:
         pass
 
-# G.remove_nodes_from(list_nodes_to_remove)
+G.remove_nodes_from(list_nodes_to_remove)
 G.remove_nodes_from(list(nx.isolates(G)))
 
 nodes = [Node(id=i[0], label=i[0], **i[1]) for i in G.nodes(data=True)]
