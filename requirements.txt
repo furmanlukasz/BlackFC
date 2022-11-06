@@ -6,3 +6,5 @@ scikit-learn
 seaborn
 streamlit_agraph
 streamlit
+matplotlib
+wordcloud
