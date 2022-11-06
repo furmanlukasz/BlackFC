@@ -6,7 +6,7 @@ import seaborn as sns
 from sklearn.preprocessing import PowerTransformer
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
-
+from decimal import Decimal
 
 def get_data():
     df_blackfriday_CA = pd.read_csv('blackfriday_CA_with_categories_and_tags.csv').drop(columns=['Unnamed: 0'])
@@ -63,7 +63,7 @@ def get_graph(df, degree):
 
     unique_colors = new_color_pallete(category_list)
 
-    df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: int(str(x))*0.1)
+    df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: int(Decimal(str(x)))*0.1)
     min = df_blackfriday_CA['value'].min()
     max = df_blackfriday_CA['value'].max()
     df_blackfriday_CA['value'] = df_blackfriday_CA['value'].apply(lambda x: (x - min)/(max-min))
