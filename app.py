@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 from graph_utils import get_graph, get_data, word_cloud
 from streamlit_agraph import agraph, Node, Edge, Config
 import networkx as nx
+
 import matplotlib.pyplot as plt
 plt.rcParams.update({'text.color': "red",
                      'axes.labelcolor': "red"})
@@ -100,6 +101,7 @@ return_value = agraph(nodes=nodes,
                       config=config)
 
 print(return_value)
+
 st.info("Click on a node")
 if return_value is not None:
     # sidebar.info("Click on a node to see its details: {}".format(return_value))
@@ -107,6 +109,8 @@ if return_value is not None:
     link = '[{}]({})'.format(return_value,url)
     st.markdown('Follow the link to see the contract or address on Etherscan: {}'.format(link), unsafe_allow_html=True)
 
-    # st.markdown(link, unsafe_allow_html=True)
+
+
+
 
 
