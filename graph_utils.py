@@ -76,7 +76,7 @@ def get_graph(df, degree):
         kk = category_list[0]
         for k in category_list:
             if row['category'] == k:
-                G.add_node(row['to'], color=unique_colors[category_list.index(k)], size=2, title=row['category'], category=row['category'], hidden=False)
+                G.add_node(row['to'], color=unique_colors[category_list.index(k)], size=2, title=row['category'], category=row['category'], hidden=True)
                 G.add_edge(row['to'], row['from'], relation=row['callingFunction'], arrows='to', value=row['value']+0.6, color=unique_colors[category_list.index(k)])
 
         # G.add_edge(row['to'], row['from'], relation=row['callingFunction'], arrows='to', value=row['value']+0.6, color=unique_colors[category_list.index(kk)]) #, color=unique_colors[category_list.index(kk)]
