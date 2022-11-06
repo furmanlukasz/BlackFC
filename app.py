@@ -28,7 +28,7 @@ categories = ['Exchanges', 'Marketplaces',
               'Media', 'Insurance',
               'Energy']
 
-options = st.multiselect('Select categories:', categories, categories)
+options = sidebar.multiselect('Select categories:', categories, categories)
 
 G = nx.read_gpickle("test.gpickle")
 
