@@ -1,5 +1,5 @@
 pandas
-networkx
+networkx<3.0
 tqdm
 numpy
 scikit-learn
