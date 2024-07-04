@@ -113,7 +113,7 @@ def get_graph(df, degree):
               'https://i.ibb.co/SmJ4fVH/Property.png',
               'https://i.ibb.co/qF3W5XC/Media.png',
               'https://i.ibb.co/QvZj0tc/Insurance.png',
-              'https://i.ibb.co/kQhvYDx/Energy.png']
+              'https://i.ibb.co/QvZj0tc/Insurance.png']
 
 
     for i, node in enumerate(noG.nodes()):
